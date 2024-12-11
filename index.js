@@ -1,7 +1,10 @@
 import express from "express"
-
+import userRouter from './routes/user.js'
 const app = express()
 const PORT = 4000
+
+app.use(express.json())
+app.use("/user", userRouter)
 
 function middleware(req, res, next) {
     req.accepted = true
